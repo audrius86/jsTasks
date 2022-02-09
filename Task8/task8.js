@@ -5,3 +5,35 @@ subtraction() - priima du skaičius ir grąžina jų skirtumą.
 multiplication() - priima du skaičius ir grąžina jų daugybos rezultatą;
 division() - priima du skaičius ir grąžina jų dalybos rezultatą;
 ------------------------------------------------------------------------------------ */
+
+function Calculator(numb1, numb2) {
+    this.numb1 = numb1;
+    this.numb2 = numb2;
+
+    this.sum = function() {
+        return numb1 + numb2;
+    }
+
+    this.subtraction = function() {
+        return numb1 - numb2;
+    }
+
+    this.multiplication = function() {
+        return numb1 * numb2;
+    }
+
+    this.division = function() {
+        if(numb2 != 0){
+        return +(numb1 / numb2).toFixed(3);
+        }else{
+            alert(`Division by ${numb2} not possible`);
+        }
+    }
+}
+
+const action = new Calculator(1458, 364);
+
+console.log(action.sum());
+console.log(action.subtraction());
+console.log(action.multiplication());
+console.log(action.division());
