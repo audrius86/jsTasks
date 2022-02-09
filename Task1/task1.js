@@ -9,16 +9,33 @@ Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
 
-const form = document.querySelector('form');
-const output = document.getElementById('output');
+const form = document.querySelector("form");
+const output = document.getElementById("output");
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  output.innerHTML = "";
 
-    let kilograms = +form[0].value;
-    let pounds = kilograms * 2.2046;
-    let grams = kilograms / 0.001;
-    let ounces = kilograms * 35.274;
-
-    // output.innerHTML = `<h1>${kilograms} kilograms is equal to: </h1></br> ${pounds} pounds </br> ${grams} grams </br> ${ounces} ounces.`;
+  const kilograms = +form[0].value;
+  createCard(kilograms);
 });
+
+function createCard(kilograms) {
+
+  const div = document.createElement("div");
+
+  const kilo = document.createElement("h2");
+  kilo.textContent = `${kilograms} kilograms is equal to:`;
+
+  const pounds = document.createElement("p");
+  pounds.textContent = `${kilograms * 2.2046} pounds`;
+
+  const grams = document.createElement("p");
+  grams.textContent = `${kilograms / 0.001} grams`;
+
+  const ounces = document.createElement("p");
+  ounces.textContent = `${kilograms * 35.274} ounces`;
+
+  div.append(kilo, pounds, grams, ounces);
+  output.append(div);
+}
