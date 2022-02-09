@@ -11,3 +11,8 @@ const audi = {
     color: 'white',
   };
   
+  function showObjectKeys(obj) {
+    console.log(Object.keys(obj));
+  }
+
+  showObjectKeys(audi);
