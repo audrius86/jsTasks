@@ -26,5 +26,26 @@
   .container h1 {
     margin-top: 50px;
     color: #333;
+    margin-bottom: 40px;
+  }
+
+  .container #output{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+
+    div{
+      width: 15%;
+      text-align: center;
+      background-color: rgb(119, 240, 170);
+      padding: 20px;
+
+      ul{
+        li{
+        list-style-type: none;
+        }
+      }
+    }
   }
   

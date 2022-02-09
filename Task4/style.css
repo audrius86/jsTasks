@@ -25,6 +25,23 @@
 .container h1 {
   margin-top: 50px;
   color: #333;
+  margin-bottom: 40px;
+}
+
+.container #output {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+}
+.container #output div {
+  width: 15%;
+  text-align: center;
+  background-color: #77f0aa;
+  padding: 20px;
+}
+.container #output div ul li {
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=style.css.map */
