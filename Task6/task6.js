@@ -22,10 +22,12 @@ const users = [
 
 function getUsersAverageAge(data) {
   let sum = 0;
-  data.forEach(user => {
-  sum += user.age; 
+  data.forEach((user) => {
+    sum += user.age;
   });
-  console.log(`All users average age is: ${(sum / data.length).toFixed(1)}`);
+  console.log(
+    `All users average age is: ${(sum / data.length).toFixed(1)} years`
+  );
 }
 
 getUsersAverageAge(users);
