@@ -12,4 +12,9 @@ let counter = 0;
 button.addEventListener("click", () => {
   counter++;
   output.textContent = counter;
+  if(counter >= 100) {
+    alert(`Please STOP clicking this button!`)
+    counter = 0;
+    output.textContent = counter;
+  }
 });
