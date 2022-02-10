@@ -17,7 +17,12 @@ form.addEventListener("submit", (e) => {
   output.innerHTML = "";
 
   const kilograms = +form[0].value;
-  createCard(kilograms);
+  if(!isNaN(kilograms)){
+    createCard(kilograms);
+  }else{
+    alert(`Bad value! Please try again.`);
+  }
+  
 });
 
 function createCard(kilograms) {
@@ -28,13 +33,13 @@ function createCard(kilograms) {
   kilo.textContent = `${kilograms} kilograms is equal to:`;
 
   const pounds = document.createElement("p");
-  pounds.textContent = `${kilograms * 2.2046} pounds`;
+  pounds.textContent = `${(kilograms * 2.2046).toFixed(2)} pounds`;
 
   const grams = document.createElement("p");
-  grams.textContent = `${kilograms / 0.001} grams`;
+  grams.textContent = `${(kilograms / 0.001).toFixed(2)} grams`;
 
   const ounces = document.createElement("p");
-  ounces.textContent = `${kilograms * 35.274} ounces`;
+  ounces.textContent = `${(kilograms * 35.274).toFixed(2)} ounces`;
 
   div.append(kilo, pounds, grams, ounces);
   output.append(div);
