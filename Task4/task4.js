@@ -26,7 +26,9 @@ function fetchCarsList() {
 
 function createCarsCards(data) {
   data.forEach((car) => {
+    
     const div = document.createElement("div");
+    
     const brand = document.createElement("h3");
     brand.textContent = car.brand;
     brand.style.fontSize = '26px';
@@ -36,8 +38,8 @@ function createCarsCards(data) {
     div.append(br);
 
     const ul = document.createElement("ul");
-    car.models.forEach((model) => {
-      
+    
+    car.models.forEach((model) => {  
       const li = document.createElement("li");
       li.textContent = model;
       ul.append(li);
@@ -45,6 +47,5 @@ function createCarsCards(data) {
 
     div.append(ul);
     output.append(div);
-    
   });
 }

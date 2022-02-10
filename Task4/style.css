@@ -35,7 +35,7 @@
   gap: 15px;
 }
 .container #output div {
-  width: 15%;
+  min-width: 15%;
   text-align: center;
   background-color: #77f0aa;
   padding: 20px;
