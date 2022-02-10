@@ -12,43 +12,39 @@ Pastaba: Informacija apie user'į (jo kortelė) bei turi turėti bent minimalų 
 
 // const ENDPOINT = 'https://api.github.com/users';
 
-const showUsersBtn = document.getElementById('btn');
-const output = document.getElementById('output');
-const message = document.getElementById('message');
+const showUsersBtn = document.getElementById("btn");
+const output = document.getElementById("output");
+const message = document.getElementById("message");
 
-showUsersBtn.addEventListener('click', () => {
+showUsersBtn.addEventListener("click", () => {
+  message.style.display = "none";
 
-    message.remove();
-
-    fetch('https://api.github.com/users')
+  fetch("https://api.github.com/users")
     .then((res) => res.json())
     .then((data) => {
-        drawUsersList(data);
+      drawUsersList(data);
     })
-    .catch((err) => alert(err))
+    .catch((err) => alert(err));
 });
 
 function drawUsersList(data) {
-    data.forEach(user => {
-        
-        const table = document.createElement('table');
-        output.append(table);
+  data.forEach((user) => {
+    const table = document.createElement("table");
+    output.append(table);
 
-        const tr = document.createElement('tr');
-        const tdLogin = document.createElement('td');
-        const tdUrl = document.createElement('td');
+    const tr = document.createElement("tr");
+    const tdLogin = document.createElement("td");
+    const tdUrl = document.createElement("td");
 
-        const img = document.createElement('img');
-        img.src = user.avatar_url;
-       
-        tdUrl.append(img);
-        tr.append(tdUrl);
+    const img = document.createElement("img");
+    img.src = user.avatar_url;
 
-        tdLogin.textContent = `User login: ${user.login}`;
+    tdUrl.append(img);
+    tr.append(tdUrl);
 
-        tr.append(tdLogin);
-        table.append(tr);        
-    });
+    tdLogin.textContent = `User login: ${user.login}`;
 
+    tr.append(tdLogin);
+    table.append(tr);
+  });
 }
-
