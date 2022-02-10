@@ -24,14 +24,14 @@ function Calculator(numb1, numb2) {
 
     this.division = function() {
         if(numb2 != 0){
-        return +(numb1 / numb2).toFixed(3);
+        return +(numb1 / numb2).toFixed(2);
         }else{
-            alert(`Division by ${numb2} not possible`);
+            alert(`Division by ${numb2} is not possible`);
         }
     }
 }
 
-const action = new Calculator(1458, 364);
+const action = new Calculator(8, 5);
 
 console.log(action.sum());
 console.log(action.subtraction());
